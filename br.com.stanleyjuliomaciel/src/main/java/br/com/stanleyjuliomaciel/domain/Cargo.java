@@ -1,6 +1,6 @@
 package br.com.stanleyjuliomaciel.domain;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
