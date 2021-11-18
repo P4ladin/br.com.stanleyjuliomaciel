@@ -9,9 +9,9 @@ public interface DepartamantoDao {
 	
 	void update(Departamento deaprtamento);
 	
-	void delete(long id);
+	void delete(Long id);
 	
-	Departamento findById(long id);
+	Departamento findById(Long id);
 	
 	
 	java.util.List<Departamento> findAll();

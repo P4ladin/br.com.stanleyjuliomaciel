@@ -8,9 +8,9 @@ public interface CargoDao {
 		
 		void update(Cargo cargo);
 		
-		void delete(long id);
+		void delete(Long id);
 		
-		Cargo findById(long id);
+		Cargo findById(Long id);
 		
 		
 		java.util.List<Cargo> findAll();

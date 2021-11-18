@@ -10,9 +10,9 @@ public interface FuncionarioDao {
 		
 	void update(Funcionario funcionario);
 		
-	void delete(long id);
+	void delete(Long id);
 		
-	Funcionario findById(long id);
+	Funcionario findById(Long id);
 		
 		
 	java.util.List<Funcionario> findAll();
