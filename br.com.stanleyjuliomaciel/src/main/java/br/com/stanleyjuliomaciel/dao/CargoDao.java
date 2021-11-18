@@ -1,7 +1,6 @@
 package br.com.stanleyjuliomaciel.dao;
 
 import br.com.stanleyjuliomaciel.domain.Cargo;
-import br.com.stanleyjuliomaciel.domain.Departamento;
 
 public interface CargoDao {
 
@@ -11,7 +10,7 @@ public interface CargoDao {
 		
 		void delete(long id);
 		
-		Departamento findById(long id);
+		Cargo findById(long id);
 		
 		
 		java.util.List<Cargo> findAll();
