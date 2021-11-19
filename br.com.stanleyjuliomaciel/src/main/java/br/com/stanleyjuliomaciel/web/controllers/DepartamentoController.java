@@ -39,10 +39,14 @@ public class DepartamentoController {
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
 		model.addAttribute("departamento", service.buscarPorId(id));
-		return "/departamentos/cadastro";
+		return "redirect:/departamentos/cadastro";
 		
 	}
 	
+	public String editar(Departamento departamento) {
+		service.editar(departamento);
+		return "redirect:/departamentos/cadastro";
+	}
 }
 		
 	
