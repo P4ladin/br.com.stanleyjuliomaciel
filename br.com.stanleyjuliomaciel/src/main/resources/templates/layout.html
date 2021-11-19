@@ -53,6 +53,42 @@
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 	    
+	    		var url = '';
+		
+		$('button[id*="btn_"]').click(function() {
+			url = "http://localhost:8080/" + $(this).attr('id').split("_")[1];
+		});
+		
+		$('#ok_confirm').click(function() {
+			document.location.href = url;
+		});
+
+Colocar mensagnes de alerta em alert.html
+	
+	<div th:if="${success} != null">
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+		  <i class="oi oi-check"></i>
+		  <span>
+		  	<strong th:text="${success}"></strong> 
+		  </span>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	</div>
+	
+	<div th:if="${fail} != null">
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		  <i class="oi oi-check"></i>
+		  <span>
+		  	<strong th:text="${fail}"></strong>
+		  </span>
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+	</div>
+	    
 		$(function() {
 			$('[data-toggle="popover"]').popover();
 		});

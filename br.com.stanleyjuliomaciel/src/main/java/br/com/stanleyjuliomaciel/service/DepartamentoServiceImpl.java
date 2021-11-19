@@ -52,6 +52,6 @@ public class DepartamentoServiceImpl implements DepartamentoService{
 		if(buscarPorId(id).getCargos().isEmpty()) {
 		return false;
 		}
-		return true
+		return true;
 	}
 }
