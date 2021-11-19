@@ -2,7 +2,9 @@ package br.com.stanleyjuliomaciel.web.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -23,7 +25,8 @@ public class DepartamentoController {
 		
 		
 	@GetMapping("/listar")
-	public String listar( ) {
+	public String listar(ModelMap model) {
+		model.addAttribute("Departamentos", service.buscarTodos());
 		return "/departamento/lista";
 	}
 	
@@ -31,6 +34,17 @@ public class DepartamentoController {
 	public String Salvar(Departamento departamento) {
 		service.salvar(departamento);
 		return "redirect:/departamentos/cadastrar";
+	 }
+	@GetMapping("/editar/{id}")
+	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
+		
+		model.addAttribute("departamento", service.buscarPorId(id));
+		return "/departamentos/cadastro";
+		
 	}
-
+	
 }
+		
+	
+
+
