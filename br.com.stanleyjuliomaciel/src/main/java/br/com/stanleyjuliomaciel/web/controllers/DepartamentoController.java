@@ -33,19 +33,32 @@ public class DepartamentoController {
 	@PostMapping("/salvar")
 	public String Salvar(Departamento departamento) {
 		service.salvar(departamento);
-		return "redirect:/departamentos/cadastrar";
+		return "redirect:/departamento/cadastrar";
 	 }
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
 		model.addAttribute("departamento", service.buscarPorId(id));
-		return "redirect:/departamentos/cadastro";
+		return "redirect:/departamento/cadastro";
 		
 	}
 	
 	public String editar(Departamento departamento) {
 		service.editar(departamento);
-		return "redirect:/departamentos/cadastro";
+		return "redirect:/departamento/cadastro";
+	}
+	
+	@GetMapping
+	public String excluir(@PathVariable("id") Long id, ModelMap model) {
+		
+		if(service.departamentoTemCargos(id)) {
+			model.addAttribute("fail", "Departamento não removido. ainda há casrgos vinculados a ele.");
+		}else {
+			service.excluir(id);
+			model.addAttribute("success", "departamento excluído com sucesso.");
+			
+		}
+		return listar(model);
 	}
 }
 		
