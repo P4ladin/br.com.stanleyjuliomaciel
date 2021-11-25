@@ -1,5 +1,7 @@
 package br.com.stanleyjuliomaciel.domain;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -18,6 +20,11 @@ public class Departamento extends AbstractEntity<Long> {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public List<Departamento> getCargos() {
+		
+		return null;
 	}
 	
 	
