@@ -1,7 +1,7 @@
 package br.com.stanleyjuliomaciel.domain;
 
 import javax.persistence.*;
-@SuppressWarnings("serial")
+
 @Entity
 @Table(name = "ENDERECOS")
 public class Endereco {

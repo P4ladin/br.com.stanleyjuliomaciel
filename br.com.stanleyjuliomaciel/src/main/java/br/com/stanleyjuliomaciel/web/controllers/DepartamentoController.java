@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.stanleyjuliomaciel.domain.Departamento;
 import br.com.stanleyjuliomaciel.service.DepartamentoService;
@@ -20,32 +21,34 @@ public class DepartamentoController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar( ) {
-		return "/departamento/cadastro";
+		return "/departamento/cadastrar";
 	}
 		
 		
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("Departamentos", service.buscarTodos());
-		return "/departamento/lista";
+		model.addAttribute("Departamento", service.buscarTodos());
+		return "/departamento/listar";
 	}
 	
 	@PostMapping("/salvar")
-	public String Salvar(Departamento departamento) {
+	public String Salvar(Departamento departamento, RedirectAttributes attr) {
 		service.salvar(departamento);
+		attr.addFlashAttribute("success", "Departamento salvo com sucesso.");
 		return "redirect:/departamento/cadastrar";
 	 }
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
 		model.addAttribute("departamento", service.buscarPorId(id));
-		return "redirect:/departamento/cadastro";
+		return "redirect:/departamento/cadastrar";
 		
 	}
 	
-	public String editar(Departamento departamento) {
+	public String editar(Departamento departamento, RedirectAttributes attr) {
 		service.editar(departamento);
-		return "redirect:/departamento/cadastro";
+		attr.addFlashAttribute("success", "Departamento alterado com sucesso.");
+		return "redirect:/departamento/cadastrar";
 	}
 	
 	@GetMapping

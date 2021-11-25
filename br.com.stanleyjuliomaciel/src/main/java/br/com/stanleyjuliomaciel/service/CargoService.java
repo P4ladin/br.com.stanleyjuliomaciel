@@ -3,6 +3,7 @@ package br.com.stanleyjuliomaciel.service;
 import java.util.List;
 
 import br.com.stanleyjuliomaciel.domain.Cargo;
+import br.com.stanleyjuliomaciel.domain.Departamento;
 
 
 public interface CargoService {
@@ -16,5 +17,7 @@ public interface CargoService {
 	Cargo buscarPorId(Long id);
 	
 	List<Cargo> buscarTodos();
+
+	boolean cargoTemFuncionario(Long id);
 
 }
