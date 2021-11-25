@@ -1,29 +1,31 @@
 package br.com.stanleyjuliomaciel.domain;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "ENDERECOS")
 public class Endereco {
 	
-	@Column(nullable = false)
+	@Column(name = "Logradouro", nullable = false)
 	private String logradouro;
 
-	@Column(nullable = false)
+	@Column(name = "Bairro", nullable = false)
 	private String bairro;
 	
-	@Column(nullable = false)
+	@Column(name = "Cidade", nullable = false)
 	private String cidade;
 	
-	@Column(nullable = false, length = 2)
+	@Column(name = "UF", nullable = false, length = 2)
 	@Enumerated(EnumType.STRING)
 	private UF uf;
 	
-	@Column(nullable = false, length = 9)
+	@Column(name = "CEP", nullable = false, length = 9)
 	private String cep;
 	
 
-	@Column(nullable = false, length = 5)
+	@Column(name = "Número", nullable = false, length = 5)
 	private String numero;
 	
 	private String complemento;
