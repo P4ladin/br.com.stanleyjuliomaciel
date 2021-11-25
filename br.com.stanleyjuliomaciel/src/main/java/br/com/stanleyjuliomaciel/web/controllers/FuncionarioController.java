@@ -46,7 +46,7 @@ public class FuncionarioController {
 		return "redirect:/funcionario/cadastrar";
 	 }
 	
-	@ModelAttribute("Cargos")
+	@ModelAttribute("cargos")
 	public List<Cargo> getCargos(){
 		return cargoService.buscarTodos();
 	}
