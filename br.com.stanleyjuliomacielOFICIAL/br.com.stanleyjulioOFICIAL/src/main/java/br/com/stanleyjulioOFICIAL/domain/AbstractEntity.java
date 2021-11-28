@@ -1,4 +1,4 @@
-package br.com.stanleyjulio.domain;
+package br.com.stanleyjulioOFICIAL.domain;
 
 import java.io.Serializable;
 import java.util.Objects;
