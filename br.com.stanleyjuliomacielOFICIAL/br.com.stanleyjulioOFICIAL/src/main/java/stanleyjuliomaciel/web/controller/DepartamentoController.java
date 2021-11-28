@@ -1,22 +1,22 @@
-package br.com.stanleyjulioOFICIAL.web.controller;
+package stanleyjuliomaciel.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/cargo")
-		 
-public class CargoController {
+@RequestMapping("/departamento")
+public class DepartamentoController {
+	
 	@GetMapping("/cadastrar")
 	public String cadastrar( ) {
-		return "/cargo/cadastro";
-	 }
-			
-			
+		return "/departamento/cadastro";
+	}
+		
+		
 	@GetMapping("/listar")
 	public String listar( ) {
-		return "/cargo/lista";
+		return "/departamento/lista";
 	}
 
 }

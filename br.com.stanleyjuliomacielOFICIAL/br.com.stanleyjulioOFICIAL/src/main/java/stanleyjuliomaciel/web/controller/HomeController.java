@@ -1,4 +1,4 @@
-package br.com.stanleyjulioOFICIAL.web.controller;
+package stanleyjuliomaciel.web.controller;
 
 import org.springframework.*;
 import org.springframework.stereotype.Controller;

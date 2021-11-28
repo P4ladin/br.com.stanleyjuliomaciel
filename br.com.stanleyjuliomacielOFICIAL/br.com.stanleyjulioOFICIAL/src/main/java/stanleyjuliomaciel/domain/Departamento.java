@@ -1,4 +1,4 @@
-package br.com.stanleyjulioOFICIAL.domain;
+package stanleyjuliomaciel.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
