@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stanleyjuliomaciel.domain.Empresa;
-import stanleyjuliomaciel.service.DepartamentoService;
+import stanleyjuliomaciel.service.EmpresaService;
 
 @Controller
 @RequestMapping("/departamento")
 public class DepartamentoController {
 	
 	@Autowired
-	private DepartamentoService service;
+	private EmpresaService service;
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar( ) {

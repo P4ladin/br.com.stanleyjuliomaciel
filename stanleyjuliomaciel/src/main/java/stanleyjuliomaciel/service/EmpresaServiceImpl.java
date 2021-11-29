@@ -12,7 +12,7 @@ import stanleyjuliomaciel.domain.Empresa;
 
 @Service
 @Transactional(readOnly = false)
-public class DepartamentoServiceImpl implements DepartamentoService{
+public class EmpresaServiceImpl implements EmpresaService{
 	
 	@Autowired
 	private EmpresaDao dao;

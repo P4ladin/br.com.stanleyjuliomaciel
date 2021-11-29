@@ -15,7 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.service.ProfissaoService;
-import stanleyjuliomaciel.service.DepartamentoService;
+import stanleyjuliomaciel.service.EmpresaService;
 
 @Controller
 @RequestMapping("/cargo")
@@ -24,7 +24,7 @@ public class CargoController {
 	
 	@Autowired
 	private ProfissaoService profissaoService;
-	private DepartamentoService departamentoService;
+	private EmpresaService empresaService;
 	
 	
 	@GetMapping("/cadastrar")
@@ -49,7 +49,7 @@ public class CargoController {
 	@ModelAttribute("departamentos")
 	public List<Empresa> listaDeDeaprtamentos(){
 	
-		return departamentoService.buscarTodos();
+		return empresaService.buscarTodos();
 	}
 	
 

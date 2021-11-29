@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
 import stanleyjuliomaciel.domain.Empresa;
-import stanleyjuliomaciel.service.DepartamentoService;
+import stanleyjuliomaciel.service.EmpresaService;
 
 public class StringToDepartamento implements Converter<String, Empresa>{
 	
 	@Autowired
-	private DepartamentoService service;
+	private EmpresaService service;
 	
 	@Override
 	public Empresa convert(String text) {

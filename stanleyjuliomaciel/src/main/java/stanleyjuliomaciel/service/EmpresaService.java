@@ -4,7 +4,7 @@ import java.util.List;
 
 import stanleyjuliomaciel.domain.Empresa;
 
-public interface DepartamentoService {
+public interface EmpresaService {
 
 	
 	void salvar (Empresa empresa); 
