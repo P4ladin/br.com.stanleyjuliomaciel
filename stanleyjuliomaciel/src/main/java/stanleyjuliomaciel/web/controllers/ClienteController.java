@@ -21,7 +21,7 @@ import stanleyjuliomaciel.service.ClienteService;
 
 @Controller
 @RequestMapping("/funcionarios")
-public class FuncionarioController {
+public class ClienteController {
 	
 	@Autowired
 	private ProfissaoService profissaoService;

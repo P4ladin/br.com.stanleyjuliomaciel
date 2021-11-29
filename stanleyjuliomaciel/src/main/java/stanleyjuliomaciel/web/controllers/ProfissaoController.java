@@ -20,7 +20,7 @@ import stanleyjuliomaciel.service.EmpresaService;
 @Controller
 @RequestMapping("/cargo")
 		 
-public class CargoController {
+public class ProfissaoController {
 	
 	@Autowired
 	private ProfissaoService profissaoService;

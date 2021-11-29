@@ -14,7 +14,7 @@ import stanleyjuliomaciel.service.EmpresaService;
 
 @Controller
 @RequestMapping("/departamento")
-public class DepartamentoController {
+public class EmpresaController {
 	
 	@Autowired
 	private EmpresaService service;
