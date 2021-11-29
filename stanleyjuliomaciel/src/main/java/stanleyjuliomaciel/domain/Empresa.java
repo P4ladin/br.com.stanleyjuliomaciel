@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "DEPARTAMENTOS")
-public class Departamento extends AbstractEntity<Long> {
+public class Empresa extends AbstractEntity<Long> {
 	
 	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
@@ -22,7 +22,7 @@ public class Departamento extends AbstractEntity<Long> {
 		this.nome = nome;
 	}
 
-	public List<Departamento> getCargos() {
+	public List<Empresa> getCargos() {
 		
 		return null;
 	}

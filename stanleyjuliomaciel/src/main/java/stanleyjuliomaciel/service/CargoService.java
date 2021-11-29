@@ -3,7 +3,7 @@ package stanleyjuliomaciel.service;
 import java.util.List;
 
 import stanleyjuliomaciel.domain.Cargo;
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 
 
 public interface CargoService {

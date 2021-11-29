@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import stanleyjuliomaciel.dao.DepartamantoDao;
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 
 
 @Service
@@ -18,14 +18,14 @@ public class DepartamentoServiceImpl implements DepartamentoService{
 	private DepartamantoDao dao;
 
 	@Override
-	public void salvar(Departamento departamento) {
-		dao.save(departamento);
+	public void salvar(Empresa empresa) {
+		dao.save(empresa);
 		
 	}
 
 	@Override
-	public void editar(Departamento departamento) {
-		dao.update(departamento);
+	public void editar(Empresa empresa) {
+		dao.update(empresa);
 		
 	}
 
@@ -36,13 +36,13 @@ public class DepartamentoServiceImpl implements DepartamentoService{
 	}
 
 	@Override @Transactional(readOnly = true)
-	public Departamento buscarPorId(Long id) {
+	public Empresa buscarPorId(Long id) {
 		
 		return dao.findById(id);
 	}
 
 	@Override @Transactional(readOnly = true)
-	public List<Departamento> buscarTodos() {
+	public List<Empresa> buscarTodos() {
 		
 		return dao.findAll();
 	}

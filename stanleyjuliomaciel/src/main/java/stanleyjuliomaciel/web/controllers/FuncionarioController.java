@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stanleyjuliomaciel.domain.Cargo;
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.domain.Funcionario;
 import stanleyjuliomaciel.domain.UF;
 import stanleyjuliomaciel.service.CargoService;

@@ -2,20 +2,20 @@ package stanleyjuliomaciel.service;
 
 import java.util.List;
 
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 
 public interface DepartamentoService {
 
 	
-	void salvar (Departamento departamento); 
+	void salvar (Empresa empresa); 
 	
-	void editar (Departamento departamento); 
+	void editar (Empresa empresa); 
 	
 	void excluir (Long id); 
 	
-	Departamento buscarPorId(Long id);
+	Empresa buscarPorId(Long id);
 	
-	List<Departamento> buscarTodos();
+	List<Empresa> buscarTodos();
 
 	boolean departamentoTemCargos(Long id);
 

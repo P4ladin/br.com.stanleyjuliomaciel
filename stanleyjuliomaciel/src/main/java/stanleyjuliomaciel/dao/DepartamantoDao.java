@@ -1,18 +1,18 @@
 package stanleyjuliomaciel.dao;
 
 import antlr.collections.List;
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 
 public interface DepartamantoDao {
 
-	void save(Departamento departamento);
+	void save(Empresa empresa);
 	
-	void update(Departamento deaprtamento);
+	void update(Empresa deaprtamento);
 	
 	void delete(Long id);
 	
-	Departamento findById(Long id);
+	Empresa findById(Long id);
 	
 	
-	java.util.List<Departamento> findAll();
+	java.util.List<Empresa> findAll();
 }

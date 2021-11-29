@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.service.DepartamentoService;
 
 @Controller
@@ -27,14 +27,14 @@ public class DepartamentoController {
 		
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("Departamento", service.buscarTodos());
+		model.addAttribute("Empresa", service.buscarTodos());
 		return "/departamento/listar";
 	}
 	
 	@PostMapping("/salvar")
-	public String Salvar(Departamento departamento, RedirectAttributes attr) {
-		service.salvar(departamento);
-		attr.addFlashAttribute("success", "Departamento salvo com sucesso.");
+	public String Salvar(Empresa empresa, RedirectAttributes attr) {
+		service.salvar(empresa);
+		attr.addFlashAttribute("success", "Empresa salvo com sucesso.");
 		return "redirect:/departamento/cadastrar";
 	 }
 	@GetMapping("/editar/{id}")
@@ -45,9 +45,9 @@ public class DepartamentoController {
 		
 	}
 	
-	public String editar(Departamento departamento, RedirectAttributes attr) {
-		service.editar(departamento);
-		attr.addFlashAttribute("success", "Departamento alterado com sucesso.");
+	public String editar(Empresa empresa, RedirectAttributes attr) {
+		service.editar(empresa);
+		attr.addFlashAttribute("success", "Empresa alterado com sucesso.");
 		return "redirect:/departamento/cadastrar";
 	}
 	
@@ -55,7 +55,7 @@ public class DepartamentoController {
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
 		if(service.departamentoTemCargos(id)) {
-			model.addAttribute("fail", "Departamento não removido. ainda há casrgos vinculados a ele.");
+			model.addAttribute("fail", "Empresa não removido. ainda há casrgos vinculados a ele.");
 		}else {
 			service.excluir(id);
 			model.addAttribute("success", "departamento excluído com sucesso.");

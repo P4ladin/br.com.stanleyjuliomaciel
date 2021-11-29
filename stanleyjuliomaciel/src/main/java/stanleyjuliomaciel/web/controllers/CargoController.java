@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stanleyjuliomaciel.domain.Cargo;
-import stanleyjuliomaciel.domain.Departamento;
+import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.service.CargoService;
 import stanleyjuliomaciel.service.DepartamentoService;
 
@@ -47,7 +47,7 @@ public class CargoController {
 	 }
 	
 	@ModelAttribute("departamentos")
-	public List<Departamento> listaDeDeaprtamentos(){
+	public List<Empresa> listaDeDeaprtamentos(){
 	
 		return departamentoService.buscarTodos();
 	}

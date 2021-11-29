@@ -17,7 +17,7 @@ public class Cargo extends AbstractEntity<Long> {
 	
 	@ManyToOne
 	@JoinColumn(name = "id_departamento_fk")
-	private Departamento departamento;
+	private Empresa empresa;
 	
 	
 	@OneToMany(mappedBy = "cargo")
@@ -39,11 +39,11 @@ public class Cargo extends AbstractEntity<Long> {
 		this.nome = nome;
 	}
 
-	public Departamento getDepartamento() {
-		return departamento;
+	public Empresa getDepartamento() {
+		return empresa;
 	}
 
-	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
+	public void setDepartamento(Empresa empresa) {
+		this.empresa = empresa;
 	}
 }
