@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.service.CargoService;
 import stanleyjuliomaciel.service.DepartamentoService;
@@ -28,7 +28,7 @@ public class CargoController {
 	
 	
 	@GetMapping("/cadastrar")
-	public String cadastrar(Cargo cargo) {
+	public String cadastrar(Profissao profissao) {
 		return "/cargo/cadastrar";
 	 }
 			
@@ -40,9 +40,9 @@ public class CargoController {
 	}
 	
 	@PostMapping("/salvar")
-	public String Salvar(Cargo cargo, RedirectAttributes attr) {
-		cargoService.salvar(cargo);
-		attr.addFlashAttribute("success", "Cargo inserido com sucesso.");
+	public String Salvar(Profissao profissao, RedirectAttributes attr) {
+		cargoService.salvar(profissao);
+		attr.addFlashAttribute("success", "Profissao inserido com sucesso.");
 		return "redirect:/cargo/cadastrar";
 	 }
 	
@@ -61,9 +61,9 @@ public class CargoController {
 		
 	}
 	
-	public String editar(Cargo cargo, RedirectAttributes attr) {
-		cargoService.editar(cargo);
-		attr.addFlashAttribute("success", "Cargo alterado com sucesso.");
+	public String editar(Profissao profissao, RedirectAttributes attr) {
+		cargoService.editar(profissao);
+		attr.addFlashAttribute("success", "Profissao alterado com sucesso.");
 		return "redirect:/cargos/cadastrar";
 	}
 	
@@ -71,10 +71,10 @@ public class CargoController {
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
 		if(cargoService.cargoTemFuncionario(id)) {
-			model.addAttribute("fail", "Cargo não removido. ainda há funcionários vinculados a ele.");
+			model.addAttribute("fail", "Profissao não removido. ainda há funcionários vinculados a ele.");
 		}else {
 			cargoService.excluir(id);
-			model.addAttribute("success", "Cargo excluído com sucesso.");
+			model.addAttribute("success", "Profissao excluído com sucesso.");
 			
 		}
 		return listar(model);

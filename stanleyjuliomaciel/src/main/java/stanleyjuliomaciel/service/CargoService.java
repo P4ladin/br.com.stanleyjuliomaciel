@@ -2,21 +2,21 @@ package stanleyjuliomaciel.service;
 
 import java.util.List;
 
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
 
 
 public interface CargoService {
 	
-	void salvar (Cargo cargo); 
+	void salvar (Profissao profissao); 
 	
-	void editar (Cargo cargo); 
+	void editar (Profissao profissao); 
 	
 	void excluir (Long id); 
 	
-	Cargo buscarPorId(Long id);
+	Profissao buscarPorId(Long id);
 	
-	List<Cargo> buscarTodos();
+	List<Profissao> buscarTodos();
 
 	boolean cargoTemFuncionario(Long id);
 

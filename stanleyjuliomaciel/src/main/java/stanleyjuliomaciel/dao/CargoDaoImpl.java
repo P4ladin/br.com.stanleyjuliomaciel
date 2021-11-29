@@ -2,9 +2,9 @@ package stanleyjuliomaciel.dao;
 
 import org.springframework.stereotype.Repository;
 
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 
 @Repository
-public class CargoDaoImpl extends AbstractDao<Cargo, Long> implements CargoDao {
+public class CargoDaoImpl extends AbstractDao<Profissao, Long> implements CargoDao {
 
 }

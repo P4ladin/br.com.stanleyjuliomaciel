@@ -3,16 +3,16 @@ package stanleyjuliomaciel.web.conversor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.service.CargoService;
 
-public class StringToCargo implements Converter<String, Cargo>{
+public class StringToCargo implements Converter<String, Profissao>{
 	
 	@Autowired
 	private CargoService service;
 	
 	@Override
-	public Cargo convert(String text) {
+	public Profissao convert(String text) {
 		if(text.isEmpty()) {
 			return null;
 		}

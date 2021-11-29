@@ -41,7 +41,7 @@ public class Funcionario extends AbstractEntity<Long> {
 	
 	@ManyToOne
 	@JoinColumn(name = "cargo_id_fk")
-	private Cargo cargo;
+	private Profissao profissao;
 
 
 	public String getNome() {
@@ -94,13 +94,13 @@ public class Funcionario extends AbstractEntity<Long> {
 	}
 
 
-	public Cargo getCargo() {
-		return cargo;
+	public Profissao getCargo() {
+		return profissao;
 	}
 
 
-	public void setCargo(Cargo cargo) {
-		this.cargo = cargo;
+	public void setCargo(Profissao profissao) {
+		this.profissao = profissao;
 	}
 	
 	

@@ -1,19 +1,19 @@
 package stanleyjuliomaciel.dao;
 
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 
 public interface CargoDao {
 
-		void save(Cargo cargo);
+		void save(Profissao profissao);
 		
-		void update(Cargo cargo);
+		void update(Profissao profissao);
 		
 		void delete(Long id);
 		
-		Cargo findById(Long id);
+		Profissao findById(Long id);
 		
 		
-		java.util.List<Cargo> findAll();
+		java.util.List<Profissao> findAll();
 	}
 
 

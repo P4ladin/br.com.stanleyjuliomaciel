@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import stanleyjuliomaciel.dao.CargoDao;
-import stanleyjuliomaciel.domain.Cargo;
+import stanleyjuliomaciel.domain.Profissao;
 
 
 @Service
@@ -20,14 +20,14 @@ public class CargoServiceImpl implements CargoService{
 	private CargoDao dao;
 
 	@Override
-	public void salvar(Cargo cargo) {
-		dao.save(cargo);
+	public void salvar(Profissao profissao) {
+		dao.save(profissao);
 		
 	}
 
 	@Override
-	public void editar(Cargo cargo) {
-		dao.update(cargo);
+	public void editar(Profissao profissao) {
+		dao.update(profissao);
 		
 	}
 
@@ -38,13 +38,13 @@ public class CargoServiceImpl implements CargoService{
 	}
 
 	@Override @Transactional(readOnly = true)
-	public Cargo buscarPorId(Long id) {
+	public Profissao buscarPorId(Long id) {
 		
 		return dao.findById(id);
 	}
 
 	@Override @Transactional(readOnly = true)
-	public List<Cargo> buscarTodos() {
+	public List<Profissao> buscarTodos() {
 		
 		return dao.findAll();
 	}
