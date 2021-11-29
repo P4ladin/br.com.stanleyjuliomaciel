@@ -17,7 +17,7 @@ import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.domain.Cliente;
 import stanleyjuliomaciel.domain.UF;
 import stanleyjuliomaciel.service.ProfissaoService;
-import stanleyjuliomaciel.service.FuncionarioService;
+import stanleyjuliomaciel.service.ClienteService;
 
 @Controller
 @RequestMapping("/funcionarios")
@@ -25,7 +25,7 @@ public class FuncionarioController {
 	
 	@Autowired
 	private ProfissaoService profissaoService;
-	private FuncionarioService funcionarioService;
+	private ClienteService clienteService;
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Cliente cliente) {
@@ -35,13 +35,13 @@ public class FuncionarioController {
 		
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
-		model.addAttribute("funcionario", funcionarioService.buscarTodos());
+		model.addAttribute("funcionario", clienteService.buscarTodos());
 		return "/funcionario/listar";
 	}
 	
 	@PostMapping("/salvar")
 	public String Salvar(Cliente cliente, RedirectAttributes attr) {
-		funcionarioService.salvar(cliente);
+		clienteService.salvar(cliente);
 		attr.addFlashAttribute("success", "Funcionário cadastrado com sucesso.");
 		return "redirect:/funcionario/cadastrar";
 	 }
@@ -60,13 +60,13 @@ public class FuncionarioController {
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
-		model.addAttribute("funcionario", funcionarioService.buscarPorId(id));
+		model.addAttribute("funcionario", clienteService.buscarPorId(id));
 		return "redirect:/funcionario/cadastrar";
 		
 	}
 	
 	public String editar(Cliente cliente, RedirectAttributes attr) {
-		funcionarioService.editar(cliente);
+		clienteService.editar(cliente);
 		attr.addFlashAttribute("success", "Funcionário alterado com sucesso.");
 		return "redirect:/funcionario/cadastrar";
 	}
@@ -74,7 +74,7 @@ public class FuncionarioController {
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
 	
-			funcionarioService.excluir(id);
+			clienteService.excluir(id);
 			attr.addFlashAttribute("success", "Funcionário excluído com sucesso.");
 			
 		

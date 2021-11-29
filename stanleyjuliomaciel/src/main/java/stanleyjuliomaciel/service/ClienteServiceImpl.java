@@ -12,7 +12,7 @@ import stanleyjuliomaciel.domain.Cliente;
 
 @Service
 @Transactional(readOnly = false)
-public class FuncionarioServiceImpl implements FuncionarioService{
+public class ClienteServiceImpl implements ClienteService{
 	
 	@Autowired
 	private ClienteDao dao;

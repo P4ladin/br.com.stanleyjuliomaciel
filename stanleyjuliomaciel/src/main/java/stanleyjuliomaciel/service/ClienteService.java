@@ -4,7 +4,7 @@ import java.util.List;
 
 import stanleyjuliomaciel.domain.Cliente;
 
-public interface FuncionarioService {
+public interface ClienteService {
 	
 	void salvar (Cliente cliente); 
 	
