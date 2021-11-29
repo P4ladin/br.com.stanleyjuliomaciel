@@ -8,10 +8,10 @@
 		<version>2.5.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>stanleyjuliomaciel</groupId>
-	<artifactId>stanleyjuliomaciel</artifactId>
+	<groupId>br.com.stanleyjulio</groupId>
+	<artifactId>br.com.stanleyjulio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stanleyjuliomaciel</name>
+	<name>br.com.stanleyjulio</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -20,6 +20,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 		
 		<dependency>
@@ -68,6 +74,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
