@@ -3,16 +3,16 @@ package stanleyjuliomaciel.web.conversor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
-import stanleyjuliomaciel.domain.Empresa;
-import stanleyjuliomaciel.service.EmpresaService;
+import stanleyjuliomaciel.domain.Profissao;
+import stanleyjuliomaciel.service.ProfissaoService;
 
-public class StringToDepartamento implements Converter<String, Empresa>{
+public class StringToProfissao implements Converter<String, Profissao>{
 	
 	@Autowired
-	private EmpresaService service;
+	private ProfissaoService service;
 	
 	@Override
-	public Empresa convert(String text) {
+	public Profissao convert(String text) {
 		if(text.isEmpty()) {
 			return null;
 		}
@@ -21,3 +21,4 @@ public class StringToDepartamento implements Converter<String, Empresa>{
 	}
 
 }
+
