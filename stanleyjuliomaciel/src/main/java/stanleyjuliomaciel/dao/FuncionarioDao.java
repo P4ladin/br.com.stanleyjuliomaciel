@@ -1,21 +1,21 @@
 package stanleyjuliomaciel.dao;
 
-import stanleyjuliomaciel.domain.Funcionario;
+import stanleyjuliomaciel.domain.Cliente;
 
 public interface FuncionarioDao {
 
 	
 
-	void save(Funcionario funcionario);
+	void save(Cliente cliente);
 		
-	void update(Funcionario funcionario);
+	void update(Cliente cliente);
 		
 	void delete(Long id);
 		
-	Funcionario findById(Long id);
+	Cliente findById(Long id);
 		
 		
-	java.util.List<Funcionario> findAll();
+	java.util.List<Cliente> findAll();
 	}
 
 

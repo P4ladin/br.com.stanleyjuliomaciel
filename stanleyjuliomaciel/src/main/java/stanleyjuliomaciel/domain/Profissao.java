@@ -21,14 +21,14 @@ public class Profissao extends AbstractEntity<Long> {
 	
 	
 	@OneToMany(mappedBy = "cargo")
-	private List<Funcionario> funcionarios;
+	private List<Cliente> clientes;
 
-	public List<Funcionario> getFuncionarios() {
-		return funcionarios;
+	public List<Cliente> getFuncionarios() {
+		return clientes;
 	}
 
-	public void setFuncionarios(List<Funcionario> funcionarios) {
-		this.funcionarios = funcionarios;
+	public void setFuncionarios(List<Cliente> clientes) {
+		this.clientes = clientes;
 	}
 
 	public String getNome() {

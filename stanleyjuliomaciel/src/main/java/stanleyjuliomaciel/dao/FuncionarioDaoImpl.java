@@ -2,9 +2,9 @@ package stanleyjuliomaciel.dao;
 
 import org.springframework.stereotype.Repository;
 
-import stanleyjuliomaciel.domain.Funcionario;
+import stanleyjuliomaciel.domain.Cliente;
 
 @Repository
-public class FuncionarioDaoImpl extends AbstractDao<Funcionario, Long> implements FuncionarioDao {
+public class FuncionarioDaoImpl extends AbstractDao<Cliente, Long> implements FuncionarioDao {
 
 }

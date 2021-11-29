@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import stanleyjuliomaciel.dao.FuncionarioDao;
-import stanleyjuliomaciel.domain.Funcionario;
+import stanleyjuliomaciel.domain.Cliente;
 
 
 @Service
@@ -18,14 +18,14 @@ public class FuncionarioServiceImpl implements FuncionarioService{
 	private FuncionarioDao dao;
 	
 	@Override
-	public void salvar(Funcionario funcionario) {
-		dao.save(funcionario);
+	public void salvar(Cliente cliente) {
+		dao.save(cliente);
 		
 	}
 
 	@Override
-	public void editar(Funcionario funcionario) {
-		dao.update(funcionario);
+	public void editar(Cliente cliente) {
+		dao.update(cliente);
 		
 	}
 
@@ -36,13 +36,13 @@ public class FuncionarioServiceImpl implements FuncionarioService{
 	}
 
 	@Override @Transactional(readOnly = true)
-	public Funcionario buscarPorId(Long id) {
+	public Cliente buscarPorId(Long id) {
 		
 		return dao.findById(id);
 	}
 
 	@Override @Transactional(readOnly = true)
-	public List<Funcionario> buscarTodos() {
+	public List<Cliente> buscarTodos() {
 		
 		return dao.findAll();
 	}

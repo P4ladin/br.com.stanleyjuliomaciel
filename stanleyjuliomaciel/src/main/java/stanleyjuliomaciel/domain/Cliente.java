@@ -17,7 +17,7 @@ import com.fasterxml.jackson.core.sym.Name;
 @Entity
 @Table(name = "FUNCIONARIOS")
 
-public class Funcionario extends AbstractEntity<Long> {
+public class Cliente extends AbstractEntity<Long> {
 	
 	@Column(nullable = false, unique = true)
 	private String nome;

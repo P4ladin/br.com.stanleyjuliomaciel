@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
-import stanleyjuliomaciel.domain.Funcionario;
+import stanleyjuliomaciel.domain.Cliente;
 import stanleyjuliomaciel.domain.UF;
 import stanleyjuliomaciel.service.CargoService;
 import stanleyjuliomaciel.service.FuncionarioService;
@@ -28,7 +28,7 @@ public class FuncionarioController {
 	private FuncionarioService funcionarioService;
 	
 	@GetMapping("/cadastrar")
-	public String cadastrar(Funcionario funcionario) {
+	public String cadastrar(Cliente cliente) {
 		return "/funcionarios/cadastrar";
 	}
 		
@@ -40,8 +40,8 @@ public class FuncionarioController {
 	}
 	
 	@PostMapping("/salvar")
-	public String Salvar(Funcionario funcionario, RedirectAttributes attr) {
-		funcionarioService.salvar(funcionario);
+	public String Salvar(Cliente cliente, RedirectAttributes attr) {
+		funcionarioService.salvar(cliente);
 		attr.addFlashAttribute("success", "Funcionário cadastrado com sucesso.");
 		return "redirect:/funcionario/cadastrar";
 	 }
@@ -65,8 +65,8 @@ public class FuncionarioController {
 		
 	}
 	
-	public String editar(Funcionario funcionario, RedirectAttributes attr) {
-		funcionarioService.editar(funcionario);
+	public String editar(Cliente cliente, RedirectAttributes attr) {
+		funcionarioService.editar(cliente);
 		attr.addFlashAttribute("success", "Funcionário alterado com sucesso.");
 		return "redirect:/funcionario/cadastrar";
 	}
