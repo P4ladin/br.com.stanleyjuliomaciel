@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import stanleyjuliomaciel.dao.CargoDao;
+import stanleyjuliomaciel.dao.ProfissaoDao;
 import stanleyjuliomaciel.domain.Profissao;
 
 
@@ -17,7 +17,7 @@ import stanleyjuliomaciel.domain.Profissao;
 public class CargoServiceImpl implements CargoService{
 	
 	@Autowired
-	private CargoDao dao;
+	private ProfissaoDao dao;
 
 	@Override
 	public void salvar(Profissao profissao) {

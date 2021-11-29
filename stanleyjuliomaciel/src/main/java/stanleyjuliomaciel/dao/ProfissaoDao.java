@@ -2,7 +2,7 @@ package stanleyjuliomaciel.dao;
 
 import stanleyjuliomaciel.domain.Profissao;
 
-public interface CargoDao {
+public interface ProfissaoDao {
 
 		void save(Profissao profissao);
 		
