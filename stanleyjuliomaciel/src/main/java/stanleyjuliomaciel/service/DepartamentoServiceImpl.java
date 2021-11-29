@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import stanleyjuliomaciel.dao.DepartamantoDao;
+import stanleyjuliomaciel.dao.EmpresaDao;
 import stanleyjuliomaciel.domain.Empresa;
 
 
@@ -15,7 +15,7 @@ import stanleyjuliomaciel.domain.Empresa;
 public class DepartamentoServiceImpl implements DepartamentoService{
 	
 	@Autowired
-	private DepartamantoDao dao;
+	private EmpresaDao dao;
 
 	@Override
 	public void salvar(Empresa empresa) {

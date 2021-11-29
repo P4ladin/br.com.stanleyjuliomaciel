@@ -3,7 +3,7 @@ package stanleyjuliomaciel.dao;
 import antlr.collections.List;
 import stanleyjuliomaciel.domain.Empresa;
 
-public interface DepartamantoDao {
+public interface EmpresaDao {
 
 	void save(Empresa empresa);
 	
