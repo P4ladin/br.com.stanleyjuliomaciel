@@ -6,7 +6,7 @@ import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
 
 
-public interface CargoService {
+public interface ProfissaoService {
 	
 	void salvar (Profissao profissao); 
 	

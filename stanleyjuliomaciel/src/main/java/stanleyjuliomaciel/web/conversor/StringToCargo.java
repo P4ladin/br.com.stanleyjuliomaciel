@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
 import stanleyjuliomaciel.domain.Profissao;
-import stanleyjuliomaciel.service.CargoService;
+import stanleyjuliomaciel.service.ProfissaoService;
 
 public class StringToCargo implements Converter<String, Profissao>{
 	
 	@Autowired
-	private CargoService service;
+	private ProfissaoService service;
 	
 	@Override
 	public Profissao convert(String text) {

@@ -16,7 +16,7 @@ import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.domain.Cliente;
 import stanleyjuliomaciel.domain.UF;
-import stanleyjuliomaciel.service.CargoService;
+import stanleyjuliomaciel.service.ProfissaoService;
 import stanleyjuliomaciel.service.FuncionarioService;
 
 @Controller
@@ -24,7 +24,7 @@ import stanleyjuliomaciel.service.FuncionarioService;
 public class FuncionarioController {
 	
 	@Autowired
-	private CargoService cargoService;
+	private ProfissaoService profissaoService;
 	private FuncionarioService funcionarioService;
 	
 	@GetMapping("/cadastrar")
@@ -48,7 +48,7 @@ public class FuncionarioController {
 	
 	@ModelAttribute("cargos")
 	public List<Profissao> getCargos(){
-		return cargoService.buscarTodos();
+		return profissaoService.buscarTodos();
 	}
 	
 	@ModelAttribute("ufs")

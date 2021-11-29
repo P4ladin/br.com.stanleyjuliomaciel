@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import stanleyjuliomaciel.domain.Profissao;
 import stanleyjuliomaciel.domain.Empresa;
-import stanleyjuliomaciel.service.CargoService;
+import stanleyjuliomaciel.service.ProfissaoService;
 import stanleyjuliomaciel.service.DepartamentoService;
 
 @Controller
@@ -23,7 +23,7 @@ import stanleyjuliomaciel.service.DepartamentoService;
 public class CargoController {
 	
 	@Autowired
-	private CargoService cargoService;
+	private ProfissaoService profissaoService;
 	private DepartamentoService departamentoService;
 	
 	
@@ -35,13 +35,13 @@ public class CargoController {
 			
 	@GetMapping("/listar")
 	public String listar(ModelMap model ) {
-		model.addAttribute("cargos", cargoService.buscarTodos());
+		model.addAttribute("cargos", profissaoService.buscarTodos());
 		return "/cargo/listar";
 	}
 	
 	@PostMapping("/salvar")
 	public String Salvar(Profissao profissao, RedirectAttributes attr) {
-		cargoService.salvar(profissao);
+		profissaoService.salvar(profissao);
 		attr.addFlashAttribute("success", "Profissao inserido com sucesso.");
 		return "redirect:/cargo/cadastrar";
 	 }
@@ -56,13 +56,13 @@ public class CargoController {
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
-		model.addAttribute("cargo", cargoService.buscarPorId(id));
+		model.addAttribute("cargo", profissaoService.buscarPorId(id));
 		return "redirect:/cargo/cadastrar";
 		
 	}
 	
 	public String editar(Profissao profissao, RedirectAttributes attr) {
-		cargoService.editar(profissao);
+		profissaoService.editar(profissao);
 		attr.addFlashAttribute("success", "Profissao alterado com sucesso.");
 		return "redirect:/cargos/cadastrar";
 	}
@@ -70,10 +70,10 @@ public class CargoController {
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
-		if(cargoService.cargoTemFuncionario(id)) {
+		if(profissaoService.cargoTemFuncionario(id)) {
 			model.addAttribute("fail", "Profissao não removido. ainda há funcionários vinculados a ele.");
 		}else {
-			cargoService.excluir(id);
+			profissaoService.excluir(id);
 			model.addAttribute("success", "Profissao excluído com sucesso.");
 			
 		}

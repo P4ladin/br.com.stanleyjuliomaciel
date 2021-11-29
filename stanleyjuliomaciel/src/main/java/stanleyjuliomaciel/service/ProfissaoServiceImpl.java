@@ -14,7 +14,7 @@ import stanleyjuliomaciel.domain.Profissao;
 
 @Service
 @Transactional(readOnly = false)
-public class CargoServiceImpl implements CargoService{
+public class ProfissaoServiceImpl implements ProfissaoService{
 	
 	@Autowired
 	private ProfissaoDao dao;
