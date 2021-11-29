@@ -2,7 +2,7 @@ package stanleyjuliomaciel.dao;
 
 import stanleyjuliomaciel.domain.Cliente;
 
-public interface FuncionarioDao {
+public interface ClienteDao {
 
 	
 

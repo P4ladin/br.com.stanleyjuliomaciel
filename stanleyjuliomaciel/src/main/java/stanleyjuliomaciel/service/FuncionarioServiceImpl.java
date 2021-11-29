@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import stanleyjuliomaciel.dao.FuncionarioDao;
+import stanleyjuliomaciel.dao.ClienteDao;
 import stanleyjuliomaciel.domain.Cliente;
 
 
@@ -15,7 +15,7 @@ import stanleyjuliomaciel.domain.Cliente;
 public class FuncionarioServiceImpl implements FuncionarioService{
 	
 	@Autowired
-	private FuncionarioDao dao;
+	private ClienteDao dao;
 	
 	@Override
 	public void salvar(Cliente cliente) {
