@@ -20,7 +20,7 @@ import stanleyjuliomaciel.service.ProfissaoService;
 import stanleyjuliomaciel.service.ClienteService;
 
 @Controller
-@RequestMapping("/funcionarios")
+@RequestMapping("/cliente")
 public class ClienteController {
 	
 	@Autowired
@@ -29,21 +29,21 @@ public class ClienteController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Cliente cliente) {
-		return "/funcionarios/cadastrar";
+		return "/cliente/cadastrar";
 	}
 		
 		
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
 		model.addAttribute("funcionario", clienteService.buscarTodos());
-		return "/funcionario/listar";
+		return "/cliente/listar";
 	}
 	
 	@PostMapping("/salvar")
 	public String Salvar(Cliente cliente, RedirectAttributes attr) {
 		clienteService.salvar(cliente);
 		attr.addFlashAttribute("success", "Funcionário cadastrado com sucesso.");
-		return "redirect:/funcionario/cadastrar";
+		return "redirect:/cliente/cadastrar";
 	 }
 	
 	@ModelAttribute("cargos")
@@ -61,24 +61,24 @@ public class ClienteController {
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
 		model.addAttribute("funcionario", clienteService.buscarPorId(id));
-		return "redirect:/funcionario/cadastrar";
+		return "redirect:/cliente/cadastrar";
 		
 	}
 	
 	public String editar(Cliente cliente, RedirectAttributes attr) {
 		clienteService.editar(cliente);
-		attr.addFlashAttribute("success", "Funcionário alterado com sucesso.");
-		return "redirect:/funcionario/cadastrar";
+		attr.addFlashAttribute("success", "Cliente alterado com sucesso.");
+		return "redirect:/cliente/cadastrar";
 	}
 	
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, RedirectAttributes attr) {
 	
 			clienteService.excluir(id);
-			attr.addFlashAttribute("success", "Funcionário excluído com sucesso.");
+			attr.addFlashAttribute("success", "Cliente excluído com sucesso.");
 			
 		
-			return "redirect:/funcionario/listar";
+			return "redirect:/cliente/listar";
 	}
 
 }

@@ -13,7 +13,7 @@ import stanleyjuliomaciel.domain.Empresa;
 import stanleyjuliomaciel.service.EmpresaService;
 
 @Controller
-@RequestMapping("/departamento")
+@RequestMapping("/empresa")
 public class EmpresaController {
 	
 	@Autowired
@@ -21,44 +21,44 @@ public class EmpresaController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar( ) {
-		return "/departamento/cadastrar";
+		return "/empresa/cadastrar";
 	}
 		
 		
 	@GetMapping("/listar")
 	public String listar(ModelMap model) {
 		model.addAttribute("Empresa", service.buscarTodos());
-		return "/departamento/listar";
+		return "/empresa/listar";
 	}
 	
 	@PostMapping("/salvar")
 	public String Salvar(Empresa empresa, RedirectAttributes attr) {
 		service.salvar(empresa);
-		attr.addFlashAttribute("success", "Empresa salvo com sucesso.");
-		return "redirect:/departamento/cadastrar";
+		attr.addFlashAttribute("success", "Empresa salva com sucesso.");
+		return "redirect:/empresa/cadastrar";
 	 }
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
 		model.addAttribute("departamento", service.buscarPorId(id));
-		return "redirect:/departamento/cadastrar";
+		return "redirect:/empresa/cadastrar";
 		
 	}
 	
 	public String editar(Empresa empresa, RedirectAttributes attr) {
 		service.editar(empresa);
 		attr.addFlashAttribute("success", "Empresa alterado com sucesso.");
-		return "redirect:/departamento/cadastrar";
+		return "redirect:/empresa/cadastrar";
 	}
 	
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
 		if(service.departamentoTemCargos(id)) {
-			model.addAttribute("fail", "Empresa não removido. ainda há casrgos vinculados a ele.");
+			model.addAttribute("fail", "Empresa não removida. ainda há casrgos vinculados a ele.");
 		}else {
 			service.excluir(id);
-			model.addAttribute("success", "departamento excluído com sucesso.");
+			model.addAttribute("success", "empresa excluída com sucesso.");
 			
 		}
 		return listar(model);
