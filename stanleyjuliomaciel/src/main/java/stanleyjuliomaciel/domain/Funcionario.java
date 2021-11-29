@@ -23,7 +23,7 @@ public class Funcionario extends AbstractEntity<Long> {
 	private String nome;
 	
 	@NumberFormat(style = Style.CURRENCY, pattern = "#,# 0,00")
-	@Column(nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
+	@Column(name = "Salário", nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
 	private BigDecimal salario;
 	
 	@DateTimeFormat(iso = ISO.DATE)

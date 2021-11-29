@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "ENDERECOS")
 public class Endereco extends AbstractEntity<Long> {
