@@ -46,7 +46,7 @@ public class ClienteController {
 		return "redirect:/cliente/cadastrar";
 	 }
 	
-	@ModelAttribute("cargos")
+	@ModelAttribute("profissao")
 	public List<Profissao> getCargos(){
 		return profissaoService.buscarTodos();
 	}

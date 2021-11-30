@@ -15,7 +15,7 @@ import com.fasterxml.jackson.core.sym.Name;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name = "FUNCIONARIOS")
+@Table(name = "CLIENTES")
 
 public class Cliente extends AbstractEntity<Long> {
 	
