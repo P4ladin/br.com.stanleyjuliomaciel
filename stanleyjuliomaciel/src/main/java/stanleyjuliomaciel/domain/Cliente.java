@@ -27,12 +27,9 @@ public class Cliente extends AbstractEntity<Long> {
 	private BigDecimal salario;
 	
 	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "data-entrada", nullable = false, columnDefinition = "DATE")
+	@Column(name = "data-cadastro", nullable = false, columnDefinition = "DATE")
 	private LocalDate dataEntrada;
 	
-	@DateTimeFormat(iso = ISO.DATE)
-	@Column(name = "data-saida", columnDefinition = "DATE")
-	private LocalDate dataSaida;
 	
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id_fk")
@@ -71,16 +68,6 @@ public class Cliente extends AbstractEntity<Long> {
 
 	public void setDataEntrada(LocalDate dataEntrada) {
 		this.dataEntrada = dataEntrada;
-	}
-
-
-	public LocalDate getDataSaida() {
-		return dataSaida;
-	}
-
-
-	public void setDataSaida(LocalDate dataSaida) {
-		this.dataSaida = dataSaida;
 	}
 
 
