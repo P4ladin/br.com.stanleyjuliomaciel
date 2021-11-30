@@ -47,15 +47,15 @@ public class EmpresaController {
 	
 	public String editar(Empresa empresa, RedirectAttributes attr) {
 		service.editar(empresa);
-		attr.addFlashAttribute("success", "Empresa alterado com sucesso.");
+		attr.addFlashAttribute("success", "Empresa modificada com sucesso.");
 		return "redirect:/empresa/cadastrar";
 	}
 	
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
-		if(service.departamentoTemCargos(id)) {
-			model.addAttribute("fail", "Empresa não removida. ainda há casrgos vinculados a ele.");
+		if(service.empresaTemProfissoes(id)) {
+			model.addAttribute("fail", "Empresa não removida. ainda há profissões vinculadas a ele.");
 		}else {
 			service.excluir(id);
 			model.addAttribute("success", "empresa excluída com sucesso.");

@@ -18,6 +18,6 @@ public interface ProfissaoService {
 	
 	List<Profissao> buscarTodos();
 
-	boolean cargoTemFuncionario(Long id);
+	boolean profissaoTemCliente(Long id);
 
 }

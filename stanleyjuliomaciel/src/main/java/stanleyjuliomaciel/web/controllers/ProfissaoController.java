@@ -18,7 +18,7 @@ import stanleyjuliomaciel.service.ProfissaoService;
 import stanleyjuliomaciel.service.EmpresaService;
 
 @Controller
-@RequestMapping("/cargo")
+@RequestMapping("/profissao")
 		 
 public class ProfissaoController {
 	
@@ -29,25 +29,25 @@ public class ProfissaoController {
 	
 	@GetMapping("/cadastrar")
 	public String cadastrar(Profissao profissao) {
-		return "/cargo/cadastrar";
+		return "/profissao/cadastrar";
 	 }
 			
 			
 	@GetMapping("/listar")
 	public String listar(ModelMap model ) {
 		model.addAttribute("cargos", profissaoService.buscarTodos());
-		return "/cargo/listar";
+		return "/profissao/listar";
 	}
 	
 	@PostMapping("/salvar")
 	public String Salvar(Profissao profissao, RedirectAttributes attr) {
 		profissaoService.salvar(profissao);
-		attr.addFlashAttribute("success", "Profissao inserido com sucesso.");
-		return "redirect:/cargo/cadastrar";
+		attr.addFlashAttribute("success", "Profissao inserida com sucesso.");
+		return "redirect:/profissao/cadastrar";
 	 }
 	
 	@ModelAttribute("departamentos")
-	public List<Empresa> listaDeDeaprtamentos(){
+	public List<Empresa> listaDeEmpresas(){
 	
 		return empresaService.buscarTodos();
 	}
@@ -56,25 +56,25 @@ public class ProfissaoController {
 	@GetMapping("/editar/{id}")
 	public String preEditar(@PathVariable("id")Long id, ModelMap model) {
 		
-		model.addAttribute("cargo", profissaoService.buscarPorId(id));
-		return "redirect:/cargo/cadastrar";
+		model.addAttribute("profissao", profissaoService.buscarPorId(id));
+		return "redirect:/profissao/cadastrar";
 		
 	}
 	
 	public String editar(Profissao profissao, RedirectAttributes attr) {
 		profissaoService.editar(profissao);
-		attr.addFlashAttribute("success", "Profissao alterado com sucesso.");
-		return "redirect:/cargos/cadastrar";
+		attr.addFlashAttribute("success", "Profissão alterada com sucesso.");
+		return "redirect:/profissao/cadastrar";
 	}
 	
 	@GetMapping
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
-		if(profissaoService.cargoTemFuncionario(id)) {
-			model.addAttribute("fail", "Profissao não removido. ainda há funcionários vinculados a ele.");
+		if(profissaoService.profissaoTemCliente(id)) {
+			model.addAttribute("fail", "Profissao não removido. ainda há clientes vinculados a ele.");
 		}else {
 			profissaoService.excluir(id);
-			model.addAttribute("success", "Profissao excluído com sucesso.");
+			model.addAttribute("success", "Profissao excluída com sucesso.");
 			
 		}
 		return listar(model);

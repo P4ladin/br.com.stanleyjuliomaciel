@@ -17,7 +17,7 @@ public interface EmpresaService {
 	
 	List<Empresa> buscarTodos();
 
-	boolean departamentoTemCargos(Long id);
+	boolean empresaTemProfissoes(Long id);
 
 }
 

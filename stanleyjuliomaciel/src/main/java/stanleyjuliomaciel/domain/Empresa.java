@@ -22,10 +22,12 @@ public class Empresa extends AbstractEntity<Long> {
 		this.nome = nome;
 	}
 
-	public List<Empresa> getCargos() {
+	public List<Empresa> getProfissoes() {
 		
 		return null;
 	}
+
+	
 	
 	
 }

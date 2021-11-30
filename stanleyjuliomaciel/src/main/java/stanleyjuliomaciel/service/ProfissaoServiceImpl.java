@@ -50,9 +50,9 @@ public class ProfissaoServiceImpl implements ProfissaoService{
 	}
 
 	@Override
-	public boolean cargoTemFuncionario(Long id) {
+	public boolean profissaoTemCliente(Long id) {
 		
-		if(buscarPorId(id).getFuncionarios().isEmpty()) {
+		if(buscarPorId(id).getCliente().isEmpty()) {
 		return false;
 		}
 	return true;
