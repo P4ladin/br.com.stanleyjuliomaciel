@@ -20,7 +20,7 @@ public class Profissao extends AbstractEntity<Long> {
 	private Empresa empresa;
 	
 	
-	@OneToMany(mappedBy = "cargo")
+	@OneToMany(mappedBy = "profissao")
 	private List<Cliente> clientes;
 
 	public List<Cliente> getCliente() {

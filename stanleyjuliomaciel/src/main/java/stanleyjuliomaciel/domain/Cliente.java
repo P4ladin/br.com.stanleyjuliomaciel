@@ -11,8 +11,6 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
-import com.fasterxml.jackson.core.sym.Name;
-
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "CLIENTES")
@@ -22,13 +20,13 @@ public class Cliente extends AbstractEntity<Long> {
 	@Column(nullable = false, unique = true)
 	private String nome;
 	
-	@NumberFormat(style = Style.CURRENCY, pattern = "#,# 0,00")
+	@NumberFormat(style = Style.CURRENCY, pattern = "#,## 0,00")
 	@Column(name = "Salário", nullable = false, columnDefinition = "DECIMAL(7,2) DEFAULT 0.00")
 	private BigDecimal salario;
 	
 	@DateTimeFormat(iso = ISO.DATE)
 	@Column(name = "data-cadastro", nullable = false, columnDefinition = "DATE")
-	private LocalDate dataEntrada;
+	private LocalDate dataCadastro;
 	
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -37,7 +35,7 @@ public class Cliente extends AbstractEntity<Long> {
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "cargo_id_fk")
+	@JoinColumn(name = "profissao_id_fk")
 	private Profissao profissao;
 
 
@@ -61,13 +59,13 @@ public class Cliente extends AbstractEntity<Long> {
 	}
 
 
-	public LocalDate getDataEntrada() {
-		return dataEntrada;
+	public LocalDate getDataCadastro() {
+		return dataCadastro;
 	}
 
 
-	public void setDataEntrada(LocalDate dataEntrada) {
-		this.dataEntrada = dataEntrada;
+	public void setDataCadastro(LocalDate dataEntrada) {
+		this.dataCadastro = dataEntrada;
 	}
 
 
@@ -81,12 +79,12 @@ public class Cliente extends AbstractEntity<Long> {
 	}
 
 
-	public Profissao getCargo() {
+	public Profissao getProfissao() {
 		return profissao;
 	}
 
 
-	public void setCargo(Profissao profissao) {
+	public void setProfissao(Profissao profissao) {
 		this.profissao = profissao;
 	}
 	
