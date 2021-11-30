@@ -46,7 +46,7 @@ public class ProfissaoController {
 		return "redirect:/profissao/cadastrar";
 	 }
 	
-	@ModelAttribute("departamentos")
+	@ModelAttribute("empresa")
 	public List<Empresa> listaDeEmpresas(){
 	
 		return empresaService.buscarTodos();
