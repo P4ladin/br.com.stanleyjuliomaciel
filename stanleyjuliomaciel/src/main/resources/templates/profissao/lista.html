@@ -10,13 +10,13 @@
 	                <ul class="navbar-nav mr-auto">
 	                    <li class="nav-item active">
 	                        <i class="oi oi-caret-right"></i>
-	                        <span>Lista de Cargos</span>
+	                        <span>Lista de Profissões</span>
 	                    </li>
 	                </ul>
 	            </div>
-	            <a class="btn btn-primary btn-md" href="/cargos/cadastrar" role="button">
+	            <a class="btn btn-primary btn-md" href="/profissao/cadastrar" role="button">
 	                <span class="oi oi-plus" title="Cadastro" aria-hidden="true"></span>
-	                <span>Novo Cargo</span>
+	                <span>Nova Profissão</span>
 	            </a>
 	        </nav>
 	
@@ -29,21 +29,21 @@
 	                    <thead>
 	                    <tr>
 	                        <th>#</th>
-	                        <th>Cargo</th>
-	                        <th>Departamento</th>
+	                        <th>Profissão</th>
+	                        <th>Empresa</th>
 	                        <th>Ação</th>
 	                    </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr th:each="c: ${cargos}">
+	                    <tr th:each="c: ${profissao}">
 	                        <td th:text="$ {c.id}">1</td>
 	                        <td th:text="$ {c.nome}">Auxiliar Contábil</td>
 	                        <td th:text="$ {c.departamento.nome}">Contabilidade</td>
 	                        <td colspan="2">
-	                            <a class="btn btn-info btn-sm" th:href="@{/cargos/editar/{id} (id=${c.id})}" role="button">
+	                            <a class="btn btn-info btn-sm" th:href="@{/profissao/editar/{id} (id=${c.id})}" role="button">
 	                                <span class="oi oi-brush" title="Editar" aria-hidden="true"></span>
 	                            </a>
-	                            <button  th:id= "${#strings.concat(id=btn_cargos/excluir/', c.id)}" type="button"
+	                            <button  th:id= "${#strings.concat(id=btn_profissao/excluir/', c.id)}" type="button"
 	                            data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-sm" >
 	                                <span class="oi oi-circle-x" title="Exclusão desabilitada" aria-hidden="true"></span>
 	                            </button>
