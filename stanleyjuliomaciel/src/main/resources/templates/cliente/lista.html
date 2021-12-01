@@ -12,7 +12,7 @@
 	                        <span>Lista de Clientes</span>
 	                    </li>
 	                </ul>
-	                <a class="btn btn-primary btn-md" href="/cliente/cadastrar" role="button">
+	                <a class="btn btn-primary btn-md" href="/clientes/cadastrar" role="button">
 	                    <span class="oi oi-plus" title="Cadastro" aria-hidden="true"></span>
 	                    <span>Cadastrar Clientes</span>
 	                </a>
@@ -38,7 +38,7 @@
 	                    <div class="collapse" id="collapseNome">
 	
 	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/cliente/buscar/nome">
+	                            <form class="form-inline" method="GET" action="/clientes/buscar/nome">
 	                                <input class="form-control mr-sm-2" type="search" placeholder="nome" aria-label="Search"
 	                                       name="nome" />
 	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -53,7 +53,7 @@
 	                    <div class="collapse" id="collapseCargo">
 	
 	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/cliente/buscar/profissao">
+	                            <form class="form-inline" method="GET" action="/clientes/buscar/profissao">
 	                                <select class="form-control mr-sm-2" name="cargo" aria-label="Search">
 	                                    <option value="">Profissão</option>
 	                                    <option value="1">Auxiliar Contábil</option>
@@ -80,7 +80,7 @@
 	                    <div class="collapse" id="collapseData">
 	
 	                        <nav class="navbar navbar-light bg-light">
-	                            <form class="form-inline" method="GET" action="/cliente/buscar/data">
+	                            <form class="form-inline" method="GET" action="/clientes/buscar/data">
 	                                <input class="form-control mr-sm-2" type="date" aria-label="Search"
 	                                       name="cadastro" />
 	                                <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
@@ -110,7 +110,7 @@
 	                    </tr>
 	                    </thead>
 	                    <tbody>
-	                    <tr th:each="f ; ${cliente}">
+	                    <tr th:each="f ; ${clientes}">
 	                        <td th:text="${f.id}">1</td>
 	                        <td th:text="${f.nome}">Jorge da Silva</td>
 	                        <td th:text="|R$ ${{f.salario}}|">R$ 3.500,99</td>

@@ -14,7 +14,7 @@
 	                        </li>
 	                    </ul>
 	                </div>
-	                <a class="btn btn-primary btn-md" href="/cliente/listar" role="button">
+	                <a class="btn btn-primary btn-md" href="/clientes/listar" role="button">
 	                    <span class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
 	                    <span>Listar Clientes</span>
 	                </a>
@@ -25,8 +25,8 @@
 	        
 	        <div th:replace="fragments/alert" ></div>
 	        
-	            <form th:action="${funcionario.id == null} ? @{/cliente/salvar} : @{/cliente/editar}" 
-	            		th:object="${cliente}"  method="POST">
+	            <form th:action="${funcionario.id == null} ? @{/clientes/salvar} : @{/clientes/editar}" 
+	            		th:object="${clientes}"  method="POST">
 	                <div class="form-row">
 	                    <div class="form-group col-md-6">
 	                        <label for="nome">Nome do Cliente</label>
